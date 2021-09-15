@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/send_button"
@@ -36,9 +36,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/name_input"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="@string/name_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,9 +51,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/last_name_input"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="@string/last_name_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_input" />
@@ -68,16 +68,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
 
-    <EditText
-        android:id="@+id/editTextDate2"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/date_of_birth_input"
+        style="?android:textStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/gender_label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gender_label" />
+        android:onClick="openDatePicker"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"
+        app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />
+
+    <TextView
+        android:id="@+id/date_of_birth_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/date_of_birth_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

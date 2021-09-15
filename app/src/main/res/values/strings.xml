@@ -5,4 +5,6 @@
     <string name="name_input">Digite un nombre...</string>
     <string name="last_name_input">Digite un apellido...</string>
     <string name="gender_label">Género</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="date_of_birth_label">Fecha de nacimiento</string>
 </resources>
