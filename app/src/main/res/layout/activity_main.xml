@@ -29,7 +29,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/send_button"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:onClick="clearInputs"/>
 
     <EditText
         android:id="@+id/name_input"
@@ -127,7 +128,9 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/programming_preference_radio_button_label"
-        app:layout_constraintTop_toBottomOf="@+id/date_of_birth_input">
+        app:layout_constraintTop_toBottomOf="@+id/date_of_birth_input"
+        android:checkedButton="@+id/programming_preference_radio_button_yes"
+        >
 
         <RadioButton
             android:id="@+id/programming_preference_radio_button_yes"

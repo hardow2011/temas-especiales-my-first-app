@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
 
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
 //    Button to activate the DatePickerDialog
     private TextView dateButton;
+    //        Gender spinner
+    private Spinner genderSpinner;
+
 
 
     @Override
@@ -31,14 +37,13 @@ public class MainActivity extends AppCompatActivity {
 //        Set initial text in the date picker to be today's date
         dateButton.setHint(getTodaysDate());
 
-//        Gender spinner
-        Spinner spinner = (Spinner) findViewById(R.id.gender_spinner);
+        genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
 //         Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gender_array, android.R.layout.simple_spinner_item);
 //         Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //         Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        genderSpinner.setAdapter(adapter);
 
     }
 
@@ -84,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
     public void sendInfo(View view) {
         Intent intent = new Intent(this, AnswerActivity.class);
         startActivity(intent);
+    }
+
+    public void clearInputs(View view) {
+        EditText nameInput = findViewById(R.id.name_input);
+        EditText lastNameInput = findViewById(R.id.last_name_input);
+
+        nameInput.setText("");
+        lastNameInput.setText("");
+        genderSpinner.setSelection(0);
+
     }
 
 }
