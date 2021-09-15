@@ -3,6 +3,7 @@ package com.example.myfirstapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -77,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
 //    Function to open the datePicker from onclick on button
     public void openDatePicker(View view) {
         datePickerDialog.show();
+    }
+
+    public void sendInfo(View view) {
+        Intent intent = new Intent(this, AnswerActivity.class);
+        startActivity(intent);
     }
 
 }
