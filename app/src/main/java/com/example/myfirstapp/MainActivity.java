@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 //    Button to activate the DatePickerDialog
     private TextView dateButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         dateButton = findViewById(R.id.date_of_birth_input);
 //        Set initial text in the date picker to be today's date
         dateButton.setText(getTodaysDate());
+
+//        Gender spinner
+        Spinner spinner = (Spinner) findViewById(R.id.gender_spinner);
+//         Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gender_array, android.R.layout.simple_spinner_item);
+//         Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//         Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
 
     }
 

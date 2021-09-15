@@ -68,18 +68,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
 
-<!--    <Button-->
-<!--        android:id="@+id/date_of_birth_input"-->
-<!--        style="?android:textStyle"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:onClick="openDatePicker"-->
-<!--        android:text=""-->
-<!--        android:textColor="@color/black"-->
-<!--        app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />-->
-
     <TextView
         android:id="@+id/date_of_birth_label"
         android:layout_width="wrap_content"
@@ -95,13 +83,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:clickable="true"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:onClick="openDatePicker"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:clickable="true"
+        android:inputType="textPersonName"
+        android:onClick="openDatePicker"
         app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"
         app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />
+
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/gender_label"
+        app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
