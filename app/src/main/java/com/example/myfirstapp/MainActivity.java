@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,12 +102,32 @@ public class MainActivity extends AppCompatActivity {
         EditText nameInput = findViewById(R.id.name_input);
         EditText lastNameInput = findViewById(R.id.last_name_input);
 
+//        Create array of the checkboxes
+        ArrayList<CheckBox> checkboxIdArray = new ArrayList<CheckBox>();
+        checkboxIdArray.add(findViewById(R.id.lenguage_java));
+        checkboxIdArray.add(findViewById(R.id.lenguage_js));
+        checkboxIdArray.add(findViewById(R.id.lenguage_c));
+        checkboxIdArray.add(findViewById(R.id.lenguage_python));
+        checkboxIdArray.add(findViewById(R.id.lenguage_go_lang));
+        checkboxIdArray.add(findViewById(R.id.lenguage_c_sharp));
+
+//        name and last name text as empty
         nameInput.setText("");
         lastNameInput.setText("");
+//        Gender spinner index set to 0
         genderSpinner.setSelection(0);
+
+//        radioGroup set at yes
         RadioButton programming_preference_radio_button_yes = findViewById(R.id.programming_preference_radio_button_yes);
         programming_preference_radio_button_group.check(programming_preference_radio_button_yes.getId());
+
+//        Date set at today
         dateButton.setHint(getTodaysDate());
+
+//        Iterate through checkboxes to set them as not checked
+        for (CheckBox languageCheckbox : checkboxIdArray) {
+            languageCheckbox.setChecked(false);
+        }
 
     }
 

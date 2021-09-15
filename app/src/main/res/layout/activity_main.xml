@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/send_button"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3"
+        app:layout_constraintTop_toBottomOf="@+id/lenguage_c"
         app:layout_constraintVertical_bias="1.0"
         android:onClick="clearInputs"/>
 
@@ -151,69 +151,69 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lenguage_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/language"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lenguage_java"
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/lenguage_java"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Java"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/lenguage_label"
         app:layout_constraintTop_toBottomOf="@+id/programming_preference_radio_button_group" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/lenguage_js"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="JS"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintStart_toEndOf="@+id/lenguage_label"
+        app:layout_constraintTop_toBottomOf="@+id/lenguage_java" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/lenguage_python"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Python"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
+        app:layout_constraintStart_toEndOf="@+id/lenguage_c"
         app:layout_constraintTop_toBottomOf="@+id/programming_preference_radio_button_group" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/lenguage_go_lang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Go Lang"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintStart_toEndOf="@+id/lenguage_c"
+        app:layout_constraintTop_toBottomOf="@+id/lenguage_python" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/lenguage_c_sharp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="C#"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+        app:layout_constraintStart_toEndOf="@+id/lenguage_c"
+        app:layout_constraintTop_toBottomOf="@+id/lenguage_go_lang" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/lenguage_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="C/C++"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintStart_toEndOf="@+id/lenguage_label"
+        app:layout_constraintTop_toBottomOf="@+id/lenguage_js" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
