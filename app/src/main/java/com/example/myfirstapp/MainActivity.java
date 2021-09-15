@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //    DatePickerDialog component
     private DatePickerDialog datePickerDialog;
 //    Button to activate the DatePickerDialog
-    private Button dateButton;
+    private TextView dateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

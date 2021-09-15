@@ -68,17 +68,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
 
-    <Button
-        android:id="@+id/date_of_birth_input"
-        style="?android:textStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="openDatePicker"
-        android:text=""
-        android:textColor="@color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"
-        app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />
+<!--    <Button-->
+<!--        android:id="@+id/date_of_birth_input"-->
+<!--        style="?android:textStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:onClick="openDatePicker"-->
+<!--        android:text=""-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />-->
 
     <TextView
         android:id="@+id/date_of_birth_label"
@@ -89,5 +89,19 @@
         android:text="@string/date_of_birth_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender_label" />
+
+    <EditText
+        android:id="@+id/date_of_birth_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:onClick="openDatePicker"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"
+        app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
