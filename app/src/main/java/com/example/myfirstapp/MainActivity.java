@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView dateButton;
     //        Gender spinner
     private Spinner genderSpinner;
+    private RadioGroup programming_preference_radio_button_group;
 
 
 
@@ -37,13 +40,15 @@ public class MainActivity extends AppCompatActivity {
 //        Set initial text in the date picker to be today's date
         dateButton.setHint(getTodaysDate());
 
-        genderSpinner = (Spinner) findViewById(R.id.gender_spinner);
+        genderSpinner = findViewById(R.id.gender_spinner);
 //         Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.gender_array, android.R.layout.simple_spinner_item);
 //         Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //         Apply the adapter to the spinner
         genderSpinner.setAdapter(adapter);
+
+        programming_preference_radio_button_group = findViewById(R.id.programming_preference_radio_button_group);
 
     }
 
@@ -98,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         nameInput.setText("");
         lastNameInput.setText("");
         genderSpinner.setSelection(0);
+        RadioButton programming_preference_radio_button_yes = findViewById(R.id.programming_preference_radio_button_yes);
+        programming_preference_radio_button_group.check(programming_preference_radio_button_yes.getId());
 
     }
 
