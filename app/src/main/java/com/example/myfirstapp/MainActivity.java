@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         initDatePicker();
         dateButton = findViewById(R.id.date_of_birth_input);
 //        Set initial text in the date picker to be today's date
-        dateButton.setText(getTodaysDate());
+        dateButton.setHint(getTodaysDate());
 
 //        Gender spinner
         Spinner spinner = (Spinner) findViewById(R.id.gender_spinner);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 month = month + 1;
                 String date = makeDateString(day, month, year);
 //                When date is set, assign it to the button as text
-                dateButton.setText(date);
+                dateButton.setHint(date);
             }
         };
 
