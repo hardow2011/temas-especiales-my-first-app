@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="@string/date_of_birth_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender_label" />
@@ -104,5 +104,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gender_label"
         app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
+
+    <TextView
+        android:id="@+id/programming_preference_radio_button_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/programming_preference_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_of_birth_label" />
+
+    <RadioGroup
+        android:id="@+id/programming_preference_radio_button_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:baselineAligned="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/programming_preference_radio_button_label"
+        app:layout_constraintTop_toBottomOf="@+id/date_of_birth_input"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/programming_preference_radio_button_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="244dp" />
+
+        <RadioButton
+            android:id="@+id/programming_preference_radio_button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            tools:layout_editor_absoluteX="223dp"
+            tools:layout_editor_absoluteY="245dp" />
+
+    </RadioGroup>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
