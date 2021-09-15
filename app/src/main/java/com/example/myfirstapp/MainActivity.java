@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+//    Function to send data to Answer activity
     public void sendInfo(View view) {
         Intent intent = new Intent(this, AnswerActivity.class);
         startActivity(intent);
