@@ -7,6 +7,7 @@
     <string name="gender_label">Género</string>
     <string name="date_of_birth_label">Fecha de nacimiento</string>
     <string name="programming_preference_label">¿Le gusta programar?</string>
+    <string name="language">Lenguaje</string>
     <string name="yes">Sí</string>
     <string name="no">No</string>
 
