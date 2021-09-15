@@ -80,9 +80,10 @@
 
     <EditText
         android:id="@+id/date_of_birth_input"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:ems="10"
         android:focusable="false"
@@ -90,14 +91,17 @@
         android:inputType="textPersonName"
         android:onClick="openDatePicker"
         app:layout_constraintBaseline_toBaselineOf="@+id/date_of_birth_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/date_of_birth_label" />
 
     <Spinner
         android:id="@+id/gender_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gender_label"
         app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
 
