@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         genderSpinner.setSelection(0);
         RadioButton programming_preference_radio_button_yes = findViewById(R.id.programming_preference_radio_button_yes);
         programming_preference_radio_button_group.check(programming_preference_radio_button_yes.getId());
+        dateButton.setHint(getTodaysDate());
 
     }
 
