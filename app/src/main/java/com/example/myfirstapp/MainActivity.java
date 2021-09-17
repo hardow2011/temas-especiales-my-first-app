@@ -95,6 +95,84 @@ public class MainActivity extends AppCompatActivity {
 //    Function to send data to Answer activity
     public void sendInfo(View view) {
         Intent intent = new Intent(this, AnswerActivity.class);
+
+//        Get data from main layout
+        EditText first_name = findViewById(R.id.name_input);
+        EditText last_name = findViewById(R.id.last_name_input);
+        int programming_preference_id = programming_preference_radio_button_group.getCheckedRadioButtonId();
+        RadioButton programming_preference = findViewById(programming_preference_id);
+        String programming_preference_msg = "";
+        String selected_languages_msg = "";
+
+        String gender_msg = "";
+
+        switch (genderSpinner.getSelectedItemPosition()) {
+            case 0:
+                gender_msg = "un hombre";
+                break;
+            default:
+                gender_msg = "una mujer";
+                break;
+        }
+
+        //        Create array of the checkboxes
+        ArrayList<CheckBox> checkedCheckboxesArray = new ArrayList<CheckBox>();
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_java));
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_js));
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_c));
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_python));
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_go_lang));
+        checkedCheckboxesArray.add(findViewById(R.id.lenguage_c_sharp));
+
+        int checkedCheckboxesArraySize = 0;
+
+//        Remove the non-checked-checkboxes from the array
+        for (CheckBox languageCheckbox : checkedCheckboxesArray) {
+            if(languageCheckbox.isChecked()) {
+                checkedCheckboxesArraySize++;
+            }
+        }
+
+        switch(programming_preference.getId()) {
+            case R.id.programming_preference_radio_button_yes:
+                programming_preference_msg = "Me gusta programar.";
+
+                switch(checkedCheckboxesArraySize) {
+                    case 1:
+                        selected_languages_msg = String.format("Mi lenguaje favorito es: %s.", checkedCheckboxesArray.get(0).getText().toString());
+                        break;
+                    default:
+                        selected_languages_msg = "Mis lenguajes favoritos son: ";
+                        for (int i = 0; i < checkedCheckboxesArray.size(); i++) {
+
+                            if(checkedCheckboxesArray.get(i).isChecked()) {
+                                if(i < checkedCheckboxesArraySize) {
+                                    checkedCheckboxesArraySize--;
+                                    selected_languages_msg = selected_languages_msg + checkedCheckboxesArray.get(i).getText().toString() + ", ";
+                                }
+                                else {
+                                    selected_languages_msg = selected_languages_msg + checkedCheckboxesArray.get(i).getText().toString() + ".";
+                                }
+                            }
+                        }
+                        break;
+                }
+                break;
+            default:
+                programming_preference_msg = "No me gusta programar.";
+        }
+
+
+
+
+//        Add data to intent
+        intent.putExtra("names_msg", first_name.getText().toString() + " " + last_name.getText().toString());
+        intent.putExtra("gender_msg", gender_msg);
+        intent.putExtra("date_of_birth_msg", dateButton.getHint().toString());
+        intent.putExtra("programming_preference_msg", programming_preference_msg);
+        intent.putExtra("selected_languages_msg", selected_languages_msg);
+
+//        start activity with intent
         startActivity(intent);
     }
 
